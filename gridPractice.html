@@ -2,62 +2,48 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Grid Fundamentals</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Template Area</title>
     <style>
-        * {
-            box-sizing: border-box;
+        .item1 { grid-area: header; }
+        .item2 { grid-area: menu; }
+        .item3 { grid-area: main; }
+        .item4 { grid-area: right; }
+        .item5 { grid-area: footer; }
+        
+        .grid-container {
+          display: grid;
+          grid-template-areas:
+          'header header header header header header'
+          'menu main main main right right'
+          'menu footer footer footer footer footer';
+          grid-gap: 10px;
+          background-color: #2196F3;
+          padding: 10px;
         }
-        body {
-            margin: 0;
-            text-align: center;
+        
+        .grid-container > div {
+          background-color: rgba(255, 255, 255, 0.8);
+          text-align: center;
+          padding: 20px 0;
+          font-size: 30px;
         }
-        main {
-            /* add margin to make the top of our grid more visible */
-            margin-top: 2em; 
-            background: lightgreen;
-            display: inline-grid;
-            grid-template-columns: 200px 200px 200px;
-            grid-template-rows: 200px 200px 200px;
-        }
-        main div {
-            font-size: 2em;
-            color: white;
-            background: grey;
-            border: 1px solid black; /* thin out border to 1px */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .example-item{
-            background: royalblue;
-            opacity: .7;
-        }
-        /* 
-            These classes are just a way to explicitly place the grey tiles 
-            so that other items may be overlaid. 
-        */
-        .one {grid-area: 1 / 1 / 2 / 2}
-        .two {grid-area: 1 / 2 / 2 / 3}
-        .three {grid-area: 1 / 3 / 2 / 4}
-        .four {grid-area: 2 / 1 / 3 / 2}
-        .five {grid-area: 2 / 2 / 3 / 3}
-        .six {grid-area: 2 / 3 / 3 / 4}
-        .seven {grid-area: 3 / 1 / 4 / 2}
-        .eight {grid-area: 3 / 2 / 4 / 3}
-        .nine {grid-area: 3 / 3 / 4 / 4}
     </style>
 </head>
 <body>
-    <main>
-        <div class="one">1</div>
-        <div class="two">2</div>
-        <div class="three">3</div>
-        <div class="four">4</div>
-        <div class="five">5</div>
-        <div class="six">6</div>
-        <div class="seven">7</div>
-        <div class="eight">8</div>
-        <div class="nine">9</div>
-    </main>
+    <h1>A Webpage Template</h1>
+
+<p>You can use the <em>grid-area</em> property to name grid items.</p>
+<p>You can refer to the name when you set up the grid layout, by using the <em>grid-template-areas</em> property on the grid container.</p>
+<p>This grid layout contains six columns and three rows:</p>
+
+<div class="grid-container">
+  <div class="item1">Header</div>
+  <div class="item2">Menu</div>
+  <div class="item3">Main</div>  
+  <div class="item4">Right</div>
+  <div class="item5">Footer</div>
+</div>
+    
 </body>
 </html>
