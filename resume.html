@@ -2,16 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Grid Fundamentals</title>
+    <title>two column grid</title>
     <style>
         *{
             box-sizing: border-box;
         }
 
-        *body{
-            margin: 0;
-            text-align: center;
-        }
+
         main {
             /* add margin to make the top of our grid more visible */
             margin-top: 2em; 
@@ -29,18 +26,21 @@
             align-items: center;
         }
 
-        .example-item{ 
+        .container{ 
 
            grid-template-columns: 1/3;
-           grid-template-rows: 1/2;
+           grid-template-rows: 1;
         }
     </style>
 </head>
 <body>
-<main>
-       <div class="example-item"></div>
-       <div class="one">1</div>
-       <div class="two">2</div>
+<main class="container">
+       <div class="box1">
+           box 1
+       </div>
+       <div class="box2">
+           box 2
+        </div>
    </main>
 </body>
 </html>
